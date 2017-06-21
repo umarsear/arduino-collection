@@ -1,0 +1,76 @@
+/*
+  
+Joystic example code for RobotDyn Joystick Shield
+  http://infinitypower.solar/yourls/joy
+
+*/
+
+// Store the Arduino pin associated with each input
+
+const byte PIN_BUTTON_SELECT = 2; // Joystick button
+const byte PIN_BUTTON_UP = 3;     // Up
+const byte PIN_BUTTON_DOWN = 5;   // Down
+const byte PIN_BUTTON_LEFT = 6;   // Left
+const byte PIN_BUTTON_RIGHT = 4;  // Right
+
+const byte PIN_BUTTON_A = 7;     // The button below Left
+const byte PIN_BUTTON_B = 8;     // The button below Right
+
+const byte PIN_ANALOG_X = 0;     // Joystick X coordinate analog pin
+const byte PIN_ANALOG_Y = 1;     // Joystick X coordinate analog pin
+
+
+void setup() {
+  Serial.begin(9600);
+  // Specify each pin connected to a pushbutton as an input.
+  pinMode(PIN_BUTTON_SELECT, INPUT);  
+  pinMode(PIN_BUTTON_UP, INPUT);  
+  pinMode(PIN_BUTTON_DOWN, INPUT);  
+  pinMode(PIN_BUTTON_LEFT, INPUT);    
+  pinMode(PIN_BUTTON_RIGHT, INPUT);  
+  pinMode(PIN_BUTTON_A, INPUT);    
+  pinMode(PIN_BUTTON_B, INPUT);  
+}
+
+void loop() {
+  // Print the current values of the inputs (joystick and
+  // buttons) to the console.
+ 
+  Serial.print("s:");
+  Serial.print(digitalRead(PIN_BUTTON_SELECT));
+  Serial.print(" ");
+
+  Serial.print("u:");
+  Serial.print(digitalRead(PIN_BUTTON_UP));
+  Serial.print(" ");
+  
+  Serial.print("d:");
+  Serial.print(digitalRead(PIN_BUTTON_DOWN));
+  Serial.print(" ");
+
+  Serial.print("l:");
+  Serial.print(digitalRead(PIN_BUTTON_LEFT));
+  Serial.print(" ");
+  
+  Serial.print("r:");
+  Serial.print(digitalRead(PIN_BUTTON_RIGHT));
+  Serial.print(" ");
+
+  Serial.print("A:");
+  Serial.print(digitalRead(PIN_BUTTON_A));
+  Serial.print(" ");
+  
+  Serial.print("B:");
+  Serial.print(digitalRead(PIN_BUTTON_B));
+  Serial.print(" ");
+
+  Serial.print("x:");
+  Serial.print(analogRead(PIN_ANALOG_X));
+  Serial.print(" ");
+  
+  Serial.print("y:");
+  Serial.print(analogRead(PIN_ANALOG_Y));
+  Serial.print(" ");  
+
+  Serial.println();
+}
